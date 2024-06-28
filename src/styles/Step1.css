@@ -1,0 +1,68 @@
+form {
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  width: 100%;
+}
+
+h3 {
+  width: 456px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.step1-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+input,
+select {
+  margin: 0px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 38px;
+  width: 100%;
+  line-height: 20px;
+  border-radius: 2px;
+}
+
+.input-label {
+  line-height: 30px;
+  width: 60px;
+  margin-top: 10px;
+}
+
+.input-group-mx, .input-group-county {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.input-group-name, .input-group-address {
+  flex-grow: 1;
+  padding-left: 40px;
+}
+
+.input-group-phone {
+  width: 50%
+}
+
+.input-group-email {
+  width: 50%;
+  padding-left: 40px;
+}
+
+.col-line {
+  display: block;
+  background-color: #ccc;
+  height: 1px;
+  width: 100%;
+  margin: 30px 0px 30px 0px;
+}
+

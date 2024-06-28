@@ -1,0 +1,48 @@
+section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-button-pre, .step-button-next {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.step-button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fc8eac;
+  border-radius: 5px;
+  color: white;
+  height: 30px;
+  width: 200px;
+  padding: 2px;
+}
+
+.step-button-pre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.step-button-pre::before {
+  content: "\2190";
+  font-size: 30px;
+  padding-right: 10px;
+}
+
+.step-button-next::after {
+  content: "\2192";
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+span {
+  display: block;
+  color: #ccc;
+}
