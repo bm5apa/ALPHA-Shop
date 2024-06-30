@@ -2,13 +2,13 @@ import '../../styles/Step1.css'
 
 function Step1() {
   return (
-  <section class="form-container">
+  <section className="form-container">
   <form data-phase="address">
-    <h3 class="form-title">寄送地址</h3>
-      <div class="step1-col">
-        <div class="input-group-mx">
-          <div class="input-label">稱謂</div>
-          <div class="select-container">
+    <h3 className="form-title">寄送地址</h3>
+      <div className="step1-col">
+        <div className="input-group-mx">
+          <div className="input-label">稱謂</div>
+          <div className="select-container">
             <select id="input-mx">
               <option value="mr" selected>先生</option>
               <option value="ms">女士</option>
@@ -16,25 +16,25 @@ function Step1() {
             </select>
           </div>
         </div>
-        <div class="input-group-name">
-          <div class="input-label">姓名</div>
+        <div className="input-group-name">
+          <div className="input-label">姓名</div>
           <input type="text" id="input-name" placeholder="請輸入姓名" />
         </div>
       </div>
-      <div class="step1-col">
-        <div class="input-group-phone">
-          <div class="input-label">電話</div>
+      <div className="step1-col">
+        <div className="input-group-phone">
+          <div className="input-label">電話</div>
           <input type="tel" id="input-phone" placeholder="請輸入行動電話" />
         </div>
-        <div class="input-group-email">
-          <div class="input-label">Email</div>
+        <div className="input-group-email">
+          <div className="input-label">Email</div>
           <input type="email" id="input-email" placeholder="請輸入電子郵件" />
         </div>
       </div>
-      <div class="step1-col">
-        <div class="input-group-county">
-          <div class="input-label">縣市</div>
-          <div class="select-container">
+      <div className="step1-col">
+        <div className="input-group-county">
+          <div className="input-label">縣市</div>
+          <div className="select-container">
             <select id="input-county" required>
               <option value="">請選擇縣市</option>
               <option value="KLU">基隆市</option>
@@ -69,8 +69,8 @@ function Step1() {
             </select>
           </div>
         </div>
-        <div class="input-group-address">
-          <div class="input-label">地址</div>
+        <div className="input-group-address">
+          <div className="input-label">地址</div>
           <input type="text" input="address" placeholder="請輸入地址" />
         </div>
       </div>

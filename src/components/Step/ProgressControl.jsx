@@ -4,12 +4,12 @@ function ProgressControl() {
 
   return (
     <>
-          <span class="col-line"></span>
-          <section class="step-button" data-phase="">
-            <button class="step-button-pre">
+          <span className="col-line"></span>
+          <section className="step-button" data-phase="">
+            <button className="step-button-pre">
               上一步
             </button>
-            <button class="step-button-next">
+            <button className="step-button-next">
               下一步
             </button>
           </section>
