@@ -1,4 +1,10 @@
-section {
+.progress-control {
+  bottom: 250px;
+  position: relative;
+  top: -210px;
+}
+
+.step-button {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -42,7 +48,7 @@ section {
   padding-left: 10px;
 }
 
-span {
+.col-lin {
   display: block;
   color: #ccc;
 }

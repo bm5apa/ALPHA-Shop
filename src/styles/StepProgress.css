@@ -60,8 +60,8 @@ span {
   top: 33px;
   height: 1.5px;
   background-color: #ccc;
-  right: calc(50% + 70px);
-  left: calc(-50% - 10px);
+  right: calc(80% + 70px);
+  left: calc(-80% - 70px);
 }
 
 .progress-bar[data-order="1"] {

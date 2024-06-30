@@ -9,7 +9,7 @@
 - React.js
 
 ## ※Installation and Execution:
-
+s
 1. git clone the URL
    https://github.com/bm5apa/ALPHA-Shop
 

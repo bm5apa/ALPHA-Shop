@@ -4,6 +4,7 @@ function ProgressControl() {
 
   return (
     <>
+    <div className='progress-control'>
           <span className="col-line"></span>
           <section className="step-button" data-phase="">
             <button className="step-button-pre">
@@ -13,6 +14,7 @@ function ProgressControl() {
               下一步
             </button>
           </section>
+        </div>
     </>
   )
 }

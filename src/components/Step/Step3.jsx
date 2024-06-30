@@ -2,6 +2,7 @@ import '../../styles/Step3.css'
 
 function Step3() {
   return (
+          <section className="form-container">
               <form className="col" data-phase="credit-card">
               <h3 className="form-title">付款資訊</h3>
               <section className="form-body">
@@ -29,6 +30,7 @@ function Step3() {
                 </div>
               </section>
             </form>
+            </section>
   )
 }
 
