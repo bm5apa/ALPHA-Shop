@@ -1,6 +1,8 @@
 import '../../styles/Step1.css'
+import '../../styles/Step2.css'
+import '../../styles/Step3.css'
 
-function Step1() {
+export function Step1() {
   return (
   <section className="form-container">
   <form data-phase="address">
@@ -79,5 +81,70 @@ function Step1() {
   )
 }
 
-export default Step1
+export function Step2() {
+  return (
+      <section className="form-container">
+            <form className="step2-colcol" data-phase="shipping">
+              <h3 className="form-title">運送方式</h3>
+              <section className="form-body">
+            <label for="shipping-standard" className="radio-group" id="radio-group-shipping-standard" data-price="0">
+            <input id="shipping-standard" type="radio" name="shipping" checked />
+                  <div className="radio-info">
+                    <div className="step2-col">
+                      <div className="text">標準運送</div>
+                      <div className="price"></div>
+                    </div>
+                    <div className="period">約 3~7 個工作天</div>
+                  </div>
+                  <div className="radio-box-border"></div>
+                </label>
+                <label for="shipping-dhl" className="radio-group" id="radio-group-shipping-dhl" data-price="500">
+                  <input id="shipping-dhl" type="radio" name="shipping" />
+                  <div className="radio-info">
+                    <div className="step2-col">
+                      <div className="text">DHL 貨運</div>
+                      <div className="price"></div>
+                    </div>
+                    <div className="period">48 小時內送達</div>
+                  </div>
+                  <div className="radio-box-border"></div>
+                </label>
+              </section>
+            </form>
+            </section>
+  )
+}
 
+export function Step3() {
+  return (
+          <section className="form-container">
+              <form className="col" data-phase="credit-card">
+              <h3 className="form-title">付款資訊</h3>
+              <section className="form-body">
+                <div className="step3-col">
+                  <div className="input-group">
+                    <div className="input-label">持卡人姓名</div>
+                    <input id="input-name" type="text" placeholder="John Doe" />
+                  </div>
+                </div>
+                <div className="step3-col">
+                  <div className="input-group">
+                    <div className="input-label">卡號</div>
+                    <input id="input-credit" type="text" placeholder="1111 2222 3333 4444" />
+                  </div>
+                </div>
+                <div className="step3-col">
+                  <div className="input-group">
+                    <div className="input-label">有效期限</div>
+                    <input id="input-date" type="text" placeholder="MM/YY" />
+                  </div>
+                  <div className="input-group">
+                    <div className="input-label" id="input-label-ccv">CVC / CCV</div>
+                    <input id="input-ccv" type="text" placeholder="123" />
+                  </div>
+                </div>
+              </section>
+            </form>
+            </section>
+  )
+}
