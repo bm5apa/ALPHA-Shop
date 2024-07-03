@@ -5,7 +5,7 @@ import plusIcon from '../../styles/svg/plus-solid.svg';
 
 export default function Cart() {
 
-  const items = [
+  const [items, setItems] = useState([
     {
       id: '1',
       name: '貓咪罐罐',
@@ -20,29 +20,18 @@ export default function Cart() {
       price: 200,
       quantity: 1,
     },
-  ];
-
-    const [amount, setAmount] = useState(() => {
-    const initialAmounts = {};
-    items.forEach(item => {
-      initialAmounts[item.id] = 0;
-    });
-    return initialAmounts;
-  });
-
+  ]);
 
   function handleClickPlus(id) {
-    setAmount(prevAmounts => ({
-      ...prevAmounts,
-      [id]: Math.min(prevAmounts[id] + 1, items.find(item => item.id === id).quantity)
-    }));
+    setItems(items.map(item => 
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    ));
   }
   
   function handleClickMinus(id) {
-    setAmount(prevAmounts => ({
-      ...prevAmounts,
-      [id]: Math.max(prevAmounts[id] - 1, 0)
-    }));
+    setItems(items.map(item => 
+      item.id === id && item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item
+    ));
   }
 
 function Items() {
@@ -56,7 +45,7 @@ function Items() {
                     <div className="product-action">
                   <img className="product-icon minus" src={minusIcon} alt="Minus" onClick={() => handleClickMinus(itemContent.id)}/>
                   </div>
-                  <span className="product-count">{amount[itemContent.id]}</span>
+                  <span className="product-count">{itemContent.quantity}</span>
                    <div className="product-action">
                   <img className="product-icon plus" src={plusIcon} alt="Plus" onClick={() => handleClickPlus(itemContent.id)} />
                    </div>
@@ -86,7 +75,7 @@ function Items() {
             <span className='cart-info-line'></span>
             <div className="cart-info-text">小計</div>
             <div className="price"></div>
-            <div className="cart-info-rightside price">${items.reduce((total, item) => total + item.price * amount[item.id], 0)}</div>
+            <div className="cart-info-rightside price">${items.reduce((total, item) => total + item.price * item.quantity, 0)}</div>
           </section>
         </section>
     </>

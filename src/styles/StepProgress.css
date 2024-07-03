@@ -17,6 +17,7 @@ span {
 .progress {
   position: relative;
   padding: 20px;
+  background-color: white;
 }
 
 .progress-group {
@@ -61,9 +62,11 @@ span {
   position: absolute;
   top: 33px;
   height: 1.5px;
+  width: 100%;
   background-color: #ccc;
-  right: calc(80% + 70px);
-  left: calc(-80% - 70px);
+  right: calc(90% + 20px);
+  left: calc(-140% + 20px);
+  z-index: -999;
 }
 
 .progress-bar[data-order="1"] {
