@@ -1,6 +1,7 @@
 import '../../styles/Step1.css'
 import '../../styles/Step2.css'
 import '../../styles/Step3.css'
+import { useState } from 'react';
 
 export function Step1() {
   return (
@@ -82,13 +83,18 @@ export function Step1() {
 }
 
 export function Step2() {
+  const [isChecked, setIsChecked] = useState(false);
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
   return (
       <section className="form-container">
             <form className="step2-colcol" data-phase="shipping">
               <h3 className="form-title">運送方式</h3>
               <section className="form-body">
-            <label for="shipping-standard" className="radio-group" id="radio-group-shipping-standard" data-price="0">
-            <input id="shipping-standard" type="radio" name="shipping" checked />
+            <label htmlFor="shipping-standard" className="radio-group" id="radio-group-shipping-standard" data-price="0">
+            <input id="shipping-standard" type="radio" name="shipping" checked={isChecked}  onChange={handleCheckboxChange} />
                   <div className="radio-info">
                     <div className="step2-col">
                       <div className="text">標準運送</div>
@@ -98,7 +104,7 @@ export function Step2() {
                   </div>
                   <div className="radio-box-border"></div>
                 </label>
-                <label for="shipping-dhl" className="radio-group" id="radio-group-shipping-dhl" data-price="500">
+                <label htmlFor="shipping-dhl" className="radio-group" id="radio-group-shipping-dhl" data-price="500">
                   <input id="shipping-dhl" type="radio" name="shipping" />
                   <div className="radio-info">
                     <div className="step2-col">

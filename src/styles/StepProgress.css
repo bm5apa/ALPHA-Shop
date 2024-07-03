@@ -8,10 +8,6 @@ span {
   font-weight: 600;
 }
 
-.progress-text[data-order="1"] {
-  color: white;
-}
-
 .progress-container {
   position: relative;
   display: flex;
@@ -44,14 +40,20 @@ span {
   border-color: black;
 }
 
+.progress-label {
+  color: #ccc;
+}
 
 .progress-label[data-order="1"] {
   color: black;
 }
 
-.text[data-order="1"] {
-  background-color: black;
-  border: 1.5px solid black;
+.progress-text{
+  color: #ccc;
+}
+
+.progress-text[data-order="1"] {
+  color: white;
 }
 
 .progress-bar {
