@@ -15,10 +15,10 @@
   width: 100%;
 }
 
-#input-name, #input-credit {
-  width: 380px;
+#cardHolder, #cardNumber {
+  width: 520px;
 }
 
-#input-ccv, #input-label-ccv {
+#ccv, #input-label-ccv {
  margin-left: 20px;
 }

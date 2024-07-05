@@ -1,39 +1,12 @@
-import '../../styles/Cart.css'
-import { useState } from 'react';
+import { useContext } from 'react';
+import { CartContext } from './CartContext.jsx';
 import minusIcon from '../../styles/svg/minus-solid.svg';
 import plusIcon from '../../styles/svg/plus-solid.svg';
+import '../../styles/Cart.css'
 
 export default function Cart() {
-
-  const [items, setItems] = useState([
-    {
-      id: '1',
-      name: '貓咪罐罐',
-      img: 'https://picsum.photos/300/300?text=1',
-      price: 100,
-      quantity: 2,
-    },
-    {
-      id: '2',
-      name: '貓咪干干',
-      img: 'https://picsum.photos/300/300?text=2',
-      price: 200,
-      quantity: 1,
-    },
-  ]);
-
-  function handleClickPlus(id) {
-    setItems(items.map(item => 
-      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-    ));
-  }
+  const { items, handleClickPlus, handleClickMinus, totalAmount } = useContext(CartContext);
   
-  function handleClickMinus(id) {
-    setItems(items.map(item => 
-      item.id === id && item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item
-    ));
-  }
-
 function Items() {
   const listItem = items.map(itemContent => 
             <div className="product-container" key={itemContent.id}>
@@ -75,7 +48,7 @@ function Items() {
             <span className='cart-info-line'></span>
             <div className="cart-info-text">小計</div>
             <div className="price"></div>
-            <div className="cart-info-rightside price">${items.reduce((total, item) => total + item.price * item.quantity, 0)}</div>
+            <div className="cart-info-rightside price">${totalAmount}</div>
           </section>
         </section>
     </>

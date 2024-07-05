@@ -1,7 +1,7 @@
+import React, { createContext, useContext, useState } from 'react';
 import '../../styles/Step1.css'
 import '../../styles/Step2.css'
 import '../../styles/Step3.css'
-import { useState } from 'react';
 
 export function Step1() {
   return (
@@ -13,7 +13,7 @@ export function Step1() {
           <div className="input-label">稱謂</div>
           <div className="select-container">
             <select id="input-mx">
-              <option value="mr" selected>先生</option>
+              <option value="mr">先生</option>
               <option value="ms">女士</option>
               <option value="mx">不明</option>
             </select>
@@ -74,7 +74,7 @@ export function Step1() {
         </div>
         <div className="input-group-address">
           <div className="input-label">地址</div>
-          <input type="text" input="address" placeholder="請輸入地址" />
+          <input type="text" id="input-address" placeholder="請輸入地址" />
         </div>
       </div>
   </form>
@@ -122,6 +122,7 @@ export function Step2() {
 }
 
 export function Step3() {
+
   return (
           <section className="form-container">
               <form className="col" data-phase="credit-card">
@@ -130,23 +131,23 @@ export function Step3() {
                 <div className="step3-col">
                   <div className="input-group">
                     <div className="input-label">持卡人姓名</div>
-                    <input id="input-name" type="text" placeholder="John Doe" />
+                    <input id="cardHolder" name="cardHolder" type="text" placeholder="John Doe" />
                   </div>
                 </div>
                 <div className="step3-col">
                   <div className="input-group">
                     <div className="input-label">卡號</div>
-                    <input id="input-credit" type="text" placeholder="1111 2222 3333 4444" />
+                    <input id="cardNumber" name="cardNumber" type="text" placeholder="1111 2222 3333 4444"/>
                   </div>
                 </div>
                 <div className="step3-col">
                   <div className="input-group">
                     <div className="input-label">有效期限</div>
-                    <input id="input-date" type="text" placeholder="MM/YY" />
+                    <input id="expiryDate" name="expiryDate" type="text" placeholder="MM/YY" />
                   </div>
                   <div className="input-group">
                     <div className="input-label" id="input-label-ccv">CVC / CCV</div>
-                    <input id="input-ccv" type="text" placeholder="123" />
+                    <input id="ccv" name="ccv" type="text" placeholder="123" />
                   </div>
                 </div>
               </section>
@@ -154,3 +155,4 @@ export function Step3() {
             </section>
   )
 }
+
