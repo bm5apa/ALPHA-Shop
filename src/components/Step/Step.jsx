@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
+import StepContext from './StepContext.jsx';
 import '../../styles/Step1.css'
 import '../../styles/Step2.css'
 import '../../styles/Step3.css'
@@ -122,6 +123,16 @@ export function Step2() {
 }
 
 export function Step3() {
+    
+  const { cardInfo, setCardInfo } = useContext(StepContext);
+
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+    setCardInfo(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   return (
           <section className="form-container">
@@ -131,23 +142,23 @@ export function Step3() {
                 <div className="step3-col">
                   <div className="input-group">
                     <div className="input-label">持卡人姓名</div>
-                    <input id="cardHolder" name="cardHolder" type="text" placeholder="John Doe" />
+                    <input id="cardHolder" name="cardHolder" type="text" placeholder="John Doe" value={cardInfo.cardHolder} onChange={handleChange}/>
                   </div>
                 </div>
                 <div className="step3-col">
                   <div className="input-group">
                     <div className="input-label">卡號</div>
-                    <input id="cardNumber" name="cardNumber" type="text" placeholder="1111 2222 3333 4444"/>
+                    <input id="cardNumber" name="cardNumber" type="text" placeholder="1111 2222 3333 4444" value={cardInfo.cardNumber} onChange={handleChange}/>
                   </div>
                 </div>
                 <div className="step3-col">
                   <div className="input-group">
                     <div className="input-label">有效期限</div>
-                    <input id="expiryDate" name="expiryDate" type="text" placeholder="MM/YY" />
+                    <input id="expiryDate" name="expiryDate" type="text" placeholder="MM/YY" value={cardInfo.expiryDate} onChange={handleChange}/>
                   </div>
                   <div className="input-group">
                     <div className="input-label" id="input-label-ccv">CVC / CCV</div>
-                    <input id="ccv" name="ccv" type="text" placeholder="123" />
+                    <input id="ccv" name="ccv" type="text" placeholder="123" value={cardInfo.ccv} onChange={handleChange}/>
                   </div>
                 </div>
               </section>

@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Step1, Step2, Step3 } from './Step.jsx';
+import { useEffect, useState, useContext } from 'react';
+import { StepContext } from './StepContext.jsx';
+import { CartContext } from '../Cart/CartContext.jsx';
 import '../../styles/ProgressControl.css'
 
 export default function ProgressControl({stepState, clickPre, clickNext}) {
-  
+
+  const { totalAmount } = useContext(CartContext);
+  const { cardInfo } = useContext(StepContext);
   const [lastPageChange, setLastPageChange] = useState('下一步');
   const [firstPageChange, setFirstPageChange] = useState({visibility: 'hidden'});
 
@@ -23,6 +26,20 @@ export default function ProgressControl({stepState, clickPre, clickNext}) {
     }
   }, [stepState]);
 
+   const handleSubmit = () => {
+    Object.entries(cardInfo).forEach(([key, value]) => {
+    console.log(`${key}: ${value}`);
+  });
+    console.log('Total:', totalAmount)
+  };
+
+  const handleClickNext = () => {
+    if (stepState === 2) {
+      handleSubmit();
+    }
+    clickNext();
+  };
+
   return (
     <div className='progress-control'>
           <span className="col-line"></span>
@@ -30,7 +47,7 @@ export default function ProgressControl({stepState, clickPre, clickNext}) {
             <button className="step-button-pre" onClick={clickPre} style={firstPageChange}>
               上一步
             </button>
-            <button className="step-button-next" onClick={clickNext} >
+            <button className="step-button-next" onClick={handleClickNext}>
               {lastPageChange}
             </button>
           </section>

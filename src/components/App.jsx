@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Step1, Step2, Step3 } from './Step/Step.jsx';
 import { CartProvider } from './Cart/CartContext.jsx';
+import { StepProvider } from './Step/StepContext.jsx';
 import StepProgress from './Step/StepProgress.jsx';
 import ProgressControl from './Step/ProgressControl.jsx';
 import Cart from './Cart/Cart.jsx';
@@ -34,6 +35,7 @@ export default function App() {
 
   return (
     <>
+      <StepProvider>
         <CartProvider>
           <div className='main'>
             <StepProgress stepState={stepState} />
@@ -44,6 +46,7 @@ export default function App() {
             <Cart />
           </div>
         </CartProvider>
+        </StepProvider>
     </>
   );
 }
