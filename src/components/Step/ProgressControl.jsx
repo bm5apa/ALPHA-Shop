@@ -7,22 +7,22 @@ export default function ProgressControl({stepState, clickPre, clickNext}) {
 
   const { totalAmount } = useContext(CartContext);
   const { cardInfo } = useContext(StepContext);
-  const [lastPageChange, setLastPageChange] = useState('下一步');
-  const [firstPageChange, setFirstPageChange] = useState({visibility: 'hidden'});
+  const [lastPageChange, setLastPageChange] = useState("下一步");
+  const [firstPageChange, setFirstPageChange] = useState({visibility: "hidden"});
 
   useEffect(() => {
     if(stepState === 0){
-      setFirstPageChange({visibility: 'hidden'})
-      setLastPageChange('下一步')
+      setFirstPageChange({ visibility: "hidden" });
+      setLastPageChange("下一步");
     }else if(stepState === 1){
-      setFirstPageChange({display: ''})
-      setLastPageChange('下一步')
+      setFirstPageChange({display: ""});
+      setLastPageChange("下一步");
     }else if(stepState === 2){
-      setFirstPageChange({display: ''})
-      setLastPageChange('確認資訊')
+      setFirstPageChange({display: ""});
+      setLastPageChange("確認資訊");
     }else{
-      setFirstPageChange({display: ''})
-      setLastPageChange('下一步')
+      setFirstPageChange({display: ""});
+      setLastPageChange("下一步");
     }
   }, [stepState]);
 
